@@ -65,6 +65,7 @@ p {
         0 0 4px #ffffff;
     margin: 0.5em 0;
 }
+/* Бял неонов параграф */
 
 .footer-buttons {
     text-align: center;
@@ -214,5 +215,4 @@ p {
     z-index: -1;
     /* зад другото съдържание */
     background-color: #0a0a0a;
-    /* черен фон */
 }
