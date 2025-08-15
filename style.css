@@ -1,0 +1,218 @@
+body {
+    background-color: #0a0a0a;
+    color: #00ff88;
+    font-family: 'Tilt Neon', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0.5em 0;
+    color: #00ccff;
+    text-shadow:
+        0 0 5px #00ccff,
+        0 0 10px #00ccff,
+        0 0 20px #00ccff,
+        0 0 40px #00f0ff,
+        0 0 80px #00f0ff;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0.5em 0;
+    color: #00ff88;
+    text-shadow:
+        0 0 3px #00ff88,
+        0 0 6px #00ff88,
+        0 0 12px #00ff88,
+        0 0 24px #00ff88;
+}
+
+p {
+    font-family: 'Tilt Neon', cursive;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #00ff88;
+    text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
+}
+
+/* Жълто за h3 */
+.highlight {
+    font-family: 'Tilt Neon', cursive;
+    color: #ffff00;
+    text-shadow:
+        0 0 3px #ffff00,
+        0 0 6px #ffff00,
+        0 0 12px #ffff00,
+        0 0 24px #ffff00;
+    margin: 0.5em 0;
+}
+
+.white-text {
+    font-family: 'Tilt Neon', cursive;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow:
+        0 0 2px #ffffff,
+        0 0 4px #ffffff;
+    margin: 0.5em 0;
+}
+
+.footer-buttons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.neon-btn {
+    display: inline-block;
+    color: #00ff88;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
+    transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+    color: #ffffff;
+    background-color: #00ff88;
+    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+
+}
+
+.footer-description p {
+    font-family: 'Tilt Neon', cursive;
+    color: #ffffff;
+    /* бяло */
+    text-align: center;
+    font-size: 16px;
+    text-shadow: 0 0 2px #ffffff, 0 0 4px #ffffff;
+    margin-top: 20px;
+    /* разстояние от бутона или съдържанието надолу */
+}
+
+.neon-btn {
+    display: inline-block;
+    color: var(--neon-color, #00ff88);
+    /* използва червеното зададено в HTML */
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid var(--neon-color, #00ff88);
+    border-radius: 8px;
+    text-shadow: 0 0 5px var(--neon-color, #00ff88), 0 0 10px var(--neon-color, #00ff88);
+    transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+    color: #ffffff;
+    background-color: var(--neon-color, #00ff88);
+    box-shadow: 0 0 10px var(--neon-color, #00ff88), 0 0 20px var(--neon-color, #00ff88), 0 0 30px var(--neon-color, #00ff88);
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    /* бутоните се пренасят на следващ ред, ако няма място */
+    justify-content: center;
+    /* центрира всички бутони */
+    gap: 20px;
+    /* разстояние между бутоните */
+    margin-top: 50px;
+}
+
+.footer-btn-wrapper {
+    text-align: center;
+    /* центрира бутон и описание вътре */
+}
+
+.footer-btn-description {
+    margin-top: 6px;
+    /* разстояние между бутон и описание */
+}
+
+/* Media query за телефони */
+@media (max-width: 600px) {
+    .neon-btn {
+        font-size: 16px;
+        /* по-малък текст за телефони */
+        padding: 8px 16px;
+        /* по-малки бутони */
+    }
+
+    .footer-btn-description {
+        font-size: 14px;
+        /* по-малко описание */
+    }
+}
+
+.footer-buttons {
+    display: flex;
+    flex-direction: column;
+    /* всеки бутон с описание на отделен ред */
+    align-items: center;
+    /* центриране на хоризонтала */
+    margin-top: 50px;
+}
+
+.footer-btn-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+    /* голямо разстояние между бутоните с описанията */
+}
+
+.profile-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    animation: glow 1.5s infinite alternate;
+    transition: transform 0.6s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+.profile-logo:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00ff00;
+    }
+
+    to {
+        box-shadow: 0 0 20px #00ff00;
+    }
+}
+
+#matrixCanvas {
+    position: fixed;
+    /* стои над всичко */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* зад другото съдържание */
+    background-color: #0a0a0a;
+    /* черен фон */
+}
