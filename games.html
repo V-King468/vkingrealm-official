@@ -2,11 +2,179 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
-    <title>My Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Game - V-KingRealm</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Welcome to My Game!</h1>
-    <p>My game soon!</p>
+    <canvas id="matrixCanvas"></canvas>
+
+    <main class="container">
+      <h1>My Game</h1>
+      <h3 class="highlight">Welcome to my first mobile game!</h3>
+      <p class="white-text">
+        This is my first Unity 2D mobile game project. In the future, more games
+        will be added here!
+      </p>
+
+      <div class="footer-btn-wrapper">
+        <!-- Disabled button for now -->
+        <a
+          href="#"
+          class="neon-btn"
+          style="--neon-color: #888; pointer-events: none; opacity: 0.6"
+        >
+          Download APK
+        </a>
+        <p class="footer-btn-description white-text">
+          🚧 SOON – the APK will be available here once the game is ready!
+        </p>
+      </div>
+
+      <footer>
+        <p style="color: #aaa">© 2025 V-KingRealm. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script>
+      const canvas = document.getElementById("matrixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let fontSize = 20;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let letters = "01";
+      let columns = Math.floor(canvas.width / fontSize);
+      let drops = Array(columns).fill(1);
+
+      function draw() {
+        ctx.fillStyle = "rgba(10, 10, 10, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ff88";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters.charAt(
+            Math.floor(Math.random() * letters.length)
+          );
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = Math.floor(canvas.width / fontSize);
+        drops.length = columns;
+        for (let i = 0; i < drops.length; i++) {
+          if (!drops[i]) drops[i] = 1;
+        }
+      });
+    </script>
   </body>
 </html>
+<!--  <!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Game - V-KingRealm</title>
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrixCanvas"></canvas>
+
+    <main class="container">
+      <h1>My Game</h1>
+      <h3 class="highlight">Welcome to my first mobile game!</h3>
+      <p class="white-text">
+        This is my first Unity 2D mobile game project. In the future, more games will be added here!
+      </p>
+
+      <div class="footer-btn-wrapper">
+        <a
+          href="downloads/mygame.apk"
+          class="neon-btn"
+          style="--neon-color: #00ff88"
+          download
+        >
+          Download APK
+        </a>
+        <p class="footer-btn-description white-text">
+          Click the button to download and install the game on your phone.
+        </p>
+      </div>
+
+      <footer>
+        <p style="color: #aaa">© 2025 V-KingRealm. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script>
+      const canvas = document.getElementById("matrixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let fontSize = 20;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let letters = "01";
+      let columns = Math.floor(canvas.width / fontSize);
+      let drops = Array(columns).fill(1);
+
+      function draw() {
+        ctx.fillStyle = "rgba(10, 10, 10, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ff88";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters.charAt(
+            Math.floor(Math.random() * letters.length)
+          );
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = Math.floor(canvas.width / fontSize);
+        drops.length = columns;
+        for (let i = 0; i < drops.length; i++) {
+          if (!drops[i]) drops[i] = 1;
+        }
+      });
+    </script>
+  </body>
+</html>
+-->
